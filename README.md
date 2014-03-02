@@ -15,7 +15,7 @@ $ npm install raspivid
 var raspivid = require('raspivid');
 var fs = require('fs');
 
-var file = fs.createReadStream(__dirname + '/video.h264');
+var file = fs.createWriteStream(__dirname + '/video.h264');
 var video = raspivid();
 
 video.pipe(file);
