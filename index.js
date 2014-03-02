@@ -20,6 +20,6 @@ module.exports = function(options){
 
   // the avconv stream that inherits stderr
   return child.spawn('raspivid', args, {
-    stdio: ['none', 'pipe', process.stderr]
+    stdio: ['ignore', 'pipe', process.stderr]
   });
 }
