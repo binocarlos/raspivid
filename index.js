@@ -19,7 +19,9 @@ module.exports = function(options){
   args.push('-')
 
   // the avconv stream that inherits stderr
-  return child.spawn('raspivid', args, {
-    stdio: ['ignore', 'pipe', 'pipe']
+  var video_process = child.spawn('raspivid', args, {
+    stdio: ['ignore', 'pipe', 'inherit']
   });
+
+  return video_process.stdout;
 }
