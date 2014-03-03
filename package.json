@@ -1,6 +1,6 @@
 {
   "name": "raspivid",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "node.js read stream for h.264 data from the raspberry PI camera module",
   "main": "index.js",
   "scripts": {
