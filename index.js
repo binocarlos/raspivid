@@ -10,7 +10,7 @@ module.exports = function(options){
   Object.keys(options || {}).forEach(function(key){
     args.push('--' + key);
     var val = options[key];
-    if(val){
+    if (val || val === 0) {
       args.push(val);
     }
   })
