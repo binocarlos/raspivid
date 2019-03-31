@@ -10,8 +10,17 @@ module.exports = function(options){
   Object.keys(options || {}).forEach(function(key){
     args.push('--' + key);
     var val = options[key];
-    if (val || val === 0) {
-      args.push(val);
+    if (Array.isArray(val)) {
+      for(var i = 0; i < val.length; i++) {
+        args.push(val[i]);
+        args.push('--' + key);
+      }        
+      args.pop();
+    }
+    else {
+      if (val || val === 0) {
+        args.push(val);
+      }
     }
   })
 
